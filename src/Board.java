@@ -12,11 +12,12 @@ public class Board {
         for (int i = 0; i < 9; i++) {
         List<Square> linha = new ArrayList<>();
         for (int j = 0; j < 9; j++) {
-            linha.add(new Square(null)); // ou null, se preferir preencher depois
+            // adicionando as 9 listas com os objetos Square como null
+            linha.add(new Square(null)); 
         }
         board.add(linha);
     }
-        for(int[] entrada : values.getValoresIniciais()){
+        for(int[] entrada : values.getInitialValues()){
             int col = entrada[0];
             int row = entrada[1];
             int value = entrada[2];
@@ -25,7 +26,7 @@ public class Board {
         }
 
 
-        for (int[] entrada : values.getValoresFixos()) {
+        for (int[] entrada : values.getFixedValues()) {
         int col = entrada[0];
         int row = entrada[1];
         int value = entrada[2];
@@ -60,6 +61,10 @@ public class Board {
     }
 
     public void editNumber(int number, int i, int j){
+         if(board.get(i).get(j).isFixed() == true){
+            System.out.println("Está posição é fixa");
+            return;
+        }
         if(number < 1 || number > 9){
             System.out.println("Erro: O número deve ser de 1 a 9");
             return;
@@ -71,12 +76,7 @@ public class Board {
             System.out.println("Erro: O número da coluna deve estar entre 1 e 9");
             return;
         }
-        if(board.get(i).get(j).isFixed() == true){
-            System.out.println("Está posição é fixa");
-            return;
-        }
         if(board.get(i).get(j).getNumber() != 0 && board.get(i).get(j).isFixed() == false){
-            // board.remove(i).remove(j);
             board.get(i).get(j).setNumber(number);
         }else{
             System.out.println("Erro: para editar uma posição é necessário primerio adicionar um número");
@@ -101,18 +101,14 @@ public class Board {
    public boolean checkGame(){
         for(List<Square> row : board){
             for(Square column : row){
-                // System.out.println("número digitado:"+column.getNumber()+"\nNúmero esperado:"+column.getExpectednumber());
                 if(column.isFixed() == false && column.getNumber() != column.getExpectednumber()){
-                        // System.out.println("O jogo não está finalizado");
                         return false;
                     
                 }else if(!check3x3()){
-                    // System.out.println("O jogo não está finalizado");
                     return false;
                 }
             }
         }
-        // System.out.println("O jogo está finalizado");
         return true;
    }
 
@@ -128,8 +124,6 @@ public class Board {
                 }
             }
                 Long qtdeNumbers = numbers.stream().distinct().count();
-                // System.out.println("qtde números por 3x3:"+duplicates);
-                // System.out.println("tamanho de números:"+numbers.size());
                 if(qtdeNumbers != numbers.size()){
                     return false;
                 }
