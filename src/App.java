@@ -13,7 +13,7 @@ public class App {
             System.out.println("3 - Visualizar tabuleiro atualizdo");
             System.out.println("4 - Verificar se o jogo foi finalizado");
             System.out.println("5 - Limpar tabuleiro");
-            System.out.println("5 - Sair");
+            System.out.println("6 - Sair");
             option = input.nextInt();
             
             switch (option) {
