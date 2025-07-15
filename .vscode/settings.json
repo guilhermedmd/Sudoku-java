@@ -1,0 +1,19 @@
+{
+  "java.project.sourcePaths": [
+    "src"
+  ],
+  "java.project.outputPath": "bin",
+  "java.project.referencedLibraries": [],
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "C:\\Users\\guilh\\AppData\\Local\\Programs\\Eclipse Adoptium\\jdk-17.0.6.10-hotspot", 
+      "default": true
+    }
+  ],
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.configuration.compilerArgs": [
+    "--release", "17"
+  ]
+}
