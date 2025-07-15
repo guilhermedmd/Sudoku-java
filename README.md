@@ -1,18 +1,20 @@
-## Getting Started
+# Sudoku em Java
+Jogo Sudoku desenvolvido na linguagem Java que implementa as funcionalidades do game por meio do terminal.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Principais funcionalidades
 
-## Folder Structure
+ - Adicionar Número: Serve para adicionar um número em uma posição válida.
+ - Editar Número: Utilizada para editar um número que o próprio jogador posicionou.
+ - Visualizar Tabuleiro Atualizado: retorna o tabuleiro atualizado.
+ - Verificar se o Jogo Foi Finalizado: Usada para verificar o tabuleiro e emitir uma mensagem se o jogador concluiu o jogo ou não.
+ - Limpar tabuleiro: Limpa o tabuleiro alterando todos os valores que o jogador atribuiu para 0.
+ - Sair: Fecha o game.
+## 
+Para que o programa funcione é necessário ter uma IDE(VS code, Eclipse, Intellij), bem como o JavaJDK (pelo menos a versão 17) instalados em sua máquina.
+<br>
+<div align = "center">
+<img src="Sudoku.png"/>
+</div>
+<br>
 
-The workspace contains two folders by default, where:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
